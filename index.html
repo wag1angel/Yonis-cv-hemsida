@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
@@ -7,26 +7,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- SKIP-LINK: Lägga denna direkt efter <body> så att tangentbordsanvändare kan hoppa till huvudinnehållet -->
+  <!-- Klipp och klistra in: <a class="skip-link" href="#content">Hoppa till huvudinnehåll</a> -->
+  <a class="skip-link" href="#content">Hoppa till huvudinnehåll</a>
   <header>
+    <!-- HEADER: semantiskt block som innehåller titel, kontakt och global navigation -->
     <h1>Yonis Yusuf</h1>
     <p>Södra Jordbrovägen 141 • 0722560919 • <a href="mailto:yonis.yusuf1@outlook.com">yonis.yusuf1@outlook.com</a></p>
+    <!-- NAV: global meny. Lägg till aria-current="page" på aktuell sida för skärmläsare -->
     <nav>
-      <a href="index.html">CV</a>
+      <a href="index.html" aria-current="page">CV</a>
       <a href="letter.html">Personligt brev</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
   </header>
-
-  <main>
+  <!-- MAIN: huvudinnehållet. Ge det ett id för skip-link: id="content" -->
+  <main id="content">
+    <!-- SECTION: Profil. Rubriker ska följa en logisk ordning (h1, h2, h3...) -->
     <section>
       <h2>Profil</h2>
-      <p>Nyligen examinerad gymnasieelev inom El och Energi (inriktning dator och kommunikation). 
-      Noggrann, kommunikativ och engagerad. Van att arbeta i team och skapa trygg miljö för andra.</p>
+      <p>Under utbildning till fullstackutvecklare med fokus på programmering och webbutveckling. Engagerad, kommunikativ och problemlösningsorienterad, med erfarenhet av teamarbete och teknisk support. Passionerad kring IT och digitala lösningar, och ständigt nyfiken på att utvecklas och bidra med nya idéer.</p>
     </section>
 
+    <!-- SECTION: Arbetslivserfarenhet. Listor är bra för läsbarhet och semantik -->
     <section>
       <h2>Arbetslivserfarenhet</h2>
       <ul>
-        <li><strong>Fryshuset IT-avdelning</strong> – Hjälpte elever med tekniska problem (2022–2023)</li>
+        <li><strong>Fryshuset-Trygghetsvärd</strong> – Skapade trygg miljö för ungdomar, förebyggde konflikter, samarbetade med skolor och föreningar. (2024–2025)</li>
+        <li><strong>Praktik Fryshuset IT-avdelning</strong> – Hjälpte elever med tekniska problem (2022–2023)</li>
         <li><strong>Matrix, Jordbro</strong> – Kassapersonal & lagerarbetare (2022)</li>
         <li><strong>IRepairofSweden</strong> – Hantering av trasiga mobiler (2021–2022)</li>
         <li><strong>Myrorna</strong> – Sortering & packning av kläder (2019)</li>
@@ -35,19 +43,45 @@
       </ul>
     </section>
 
+    <!-- SECTION: Utbildning -->
     <section>
       <h2>Utbildning</h2>
       <p><strong>El och Energi, dator & kommunikation</strong> – Fredrika Bremer, Handen (2021–2023)</p>
     </section>
 
+    <!-- SECTION: Språk -->
     <section>
       <h2>Språk</h2>
       <p>Svenska (flytande) • Engelska (bra) • Somaliska (modersmål)</p>
     </section>
-  </main>
 
-  <footer>
+    <!-- EXEMPEL: Accordion (kommenterat) - använd <details> för att lägga till en klickbar sektion -->
+    <!--
+    <details class="accordion">
+      <summary>Frontend skills</summary>
+      <div class="accordion__content">
+        <p>HTML, CSS, responsiv layout, tillgänglighet</p>
+      </div>
+    </details>
+    -->
+
+    <!-- EXEMPEL: Modal (kommenterat) - :target-mönster för att öppna modal utan JS -->
+    <!--
+    <a href="#modal-cv" class="open-modal">Öppna CV-förhandsvisning</a>
+    <div id="modal-cv" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-inner">
+        <a href="#" class="modal-close">Stäng</a>
+        <p>Innehåll här</p>
+      </div>
+    </div>
+    -->
+
+  </main>
+  <!-- FOOTER: sidfot -->
+    <footer>
     <p>© 2025 Yonis Yusuf</p>
+    <p>https://github.com/wag1angel</p>
+    <p>Yonis.Yusuf1@outlook.com</p>
   </footer>
 </body>
 </html>
