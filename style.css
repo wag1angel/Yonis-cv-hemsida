@@ -149,21 +149,23 @@ footer {
   display: block;
 }
 
-/* ===== På dator (≥768px): visa menyn alltid, göm hamburgaren ===== */
-@media (min-width: 768px) {
-  .nav-toggle-label {
-    display: none;
-  }
-  .main-nav {
-    display: block;
-    margin-left: auto;
-    background: transparent;
-    padding: 0;
-  }
-  .main-nav__list {
-    flex-direction: row;
-    gap: 1rem;
-  }
+/* Menyn (gömd från början på mobil) */
+.main-nav {
+  display: none; /* <-- Håller menyn gömd som standard */
+  background: #004466;
+  padding: 10px;
+}
+.main-nav__list {
+  /* ... */
+  display: flex;
+  flex-direction: column; /* <-- Listan är vertikal (staplad) */
+  gap: 0.5rem;
+}
+
+/* När checkbox är ikryssad → visa menyn */
+.nav-toggle:checked ~ .main-nav {
+  display: block; /* <-- Visar menyn när checkboxen är ikryssad */
+}
   .main-nav__list a {
     color: #fff;
   }
