@@ -169,4 +169,12 @@ footer {
   .main-nav__list a {
     color: #fff;
   }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Dessa regler gäller BARA om användaren bett om mindre rörelse */
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    transition: none; 
+  }
 }
