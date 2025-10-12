@@ -1,3 +1,4 @@
+/* ===== Grundstil ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,30 +8,38 @@ body {
   color: #333;
 }
 
+/* Header */
 header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 16px 20px;
   background: #004466;
   color: #fff;
-  padding: 20px;
-  text-align: center;
+  position: relative;
 }
 
 header h1 {
   margin: 0;
+  font-size: 1.25rem;
 }
 
+header p {
+  margin: 0 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* Länkar */
 nav a {
-  color: #fff;
-  margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
-  text-decoration: underline;
-
+  color: #fff;
 }
-
 nav a:hover {
   text-decoration: underline;
 }
 
+/* Main */
 main {
   max-width: 800px;
   margin: auto;
@@ -39,6 +48,7 @@ main {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
@@ -46,84 +56,115 @@ footer {
   margin-top: 10px;
 }
 
-/* ==========================
-   Learning comments & helpers
-   These blocks explain what to paste and why. They are safe comments and small rules.
-   ========================== */
-
-/* Skip-link: hidden off-screen but visible on focus for keyboard users */
+/* Skip-link */
 .skip-link {
   position: absolute;
   left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }
-.skip-link:focus,
-.skip-link:active {
+.skip-link:focus {
   left: 1rem;
   top: 1rem;
-  width: auto;
-  height: auto;
-  padding: 0.5rem 1rem;
   background: #004466;
   color: #fff;
-  z-index: 1000;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
+  z-index: 1000;
 }
 
-/* Variables example: paste near top of your file to create design tokens */
-/* Uncomment and adjust colors/spacing to match your design */
-/*
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #666666;
-  --accent: #0b6efd;
-  --gap: 1rem;
-  --max-width: 1000px;
-  --container-padding: 1rem;
+/* ===== Hamburgermeny ===== */
+
+/* Dölj checkboxen */
+.nav-toggle {
+  display: none;
 }
-*/
 
-/* Container utility - centers content and limits width */
-/* .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--container-padding); } */
+/* Hamburgarknappen */
+.nav-toggle-label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 36px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
 
-/* Hamburger / nav (checkbox-hack) - add this CSS if you also add the HTML checkbox + label */
-/*
-.nav-toggle { position: absolute; left: -9999px; }
-.nav-toggle-label { display:inline-block; width:44px; height:36px; padding:6px; cursor:pointer; }
-.hamburger, .hamburger::before, .hamburger::after { content: ''; display:block; height:3px; background:#333; border-radius:3px; transition: transform 200ms ease, opacity 200ms ease; }
-.hamburger::before { transform: translateY(-9px); }
-.hamburger::after  { transform: translateY(6px); }
-.main-nav { display:none; position:absolute; left:0; right:0; top:100%; background:#fff; padding:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
-.nav-toggle:checked + .nav-toggle-label .hamburger { background: transparent; }
-.nav-toggle:checked + .nav-toggle-label .hamburger::before { transform: translateY(0) rotate(45deg); }
-.nav-toggle:checked + .nav-toggle-label .hamburger::after  { transform: translateY(0) rotate(-45deg); }
-.nav-toggle:checked + .nav-toggle-label + .main-nav { display:block; }
-@media(min-width:768px) { .nav-toggle-label{ display:none; } .main-nav{ display:block; position:static; box-shadow:none; padding:0; } .main-nav__list{ display:flex; gap:var(--gap); align-items:center; margin:0; padding:0; list-style:none; } }
-*/
+/* Själva hamburger-ikonen */
+.hamburger {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger::before { top: -8px; }
+.hamburger::after  { top: 8px; }
 
-/* Accordion (details/summary) styles - uncomment to enable */
-/*
-details summary { list-style:none; cursor:pointer; padding:0.5rem 0; font-weight:600; }
-details summary::-webkit-details-marker { display:none; }
-details[open] summary { color: var(--accent, #0b6efd); }
-.accordion__content { padding: 0.5rem 0 1rem 0; }
-*/
+/* Animation till "X" när menyn är öppen */
+.nav-toggle:checked + .nav-toggle-label .hamburger {
+  background: transparent;
+}
+.nav-toggle:checked + .nav-toggle-label .hamburger::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle:checked + .nav-toggle-label .hamburger::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
-/* Modal (:target) styles example - uncomment to enable */
-/*
-.modal { position: fixed; inset: 0; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.45); opacity:0; pointer-events:none; transition:opacity 180ms ease; }
-.modal:target { opacity:1; pointer-events:auto; }
-.modal-inner { background: #fff; padding:1.25rem; border-radius:8px; max-width:min(720px,95%); max-height:80vh; overflow:auto; }
-*/
+/* Menyn (gömd från början på mobil) */
+.main-nav {
+  display: none;
+  background: #004466;
+  padding: 10px;
+}
+.main-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.main-nav__list a {
+  color: #fff;
+}
 
-/* Responsive image example (comment) - use <picture> or <img srcset> in HTML */
-/*
-<picture>
-  <source type="image/webp" srcset="images/me-400.webp 400w, images/me-800.webp 800w, images/me-1200.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw">
-  <img src="images/me-800.jpg" srcset="images/me-400.jpg 400w, images/me-800.jpg 800w, images/me-1200.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1024px) 50vw, 33vw" alt="Portrait of Yonis" loading="lazy">
-</picture>
-*/
+/* När checkbox är ikryssad → visa menyn */
+.nav-toggle:checked ~ .main-nav {
+  display: block;
+}
+
+/* ===== På dator (≥768px): visa menyn alltid, göm hamburgaren ===== */
+@media (min-width: 768px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  .main-nav {
+    display: block;
+    margin-left: auto;
+    background: transparent;
+    padding: 0;
+  }
+  .main-nav__list {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .main-nav__list a {
+    color: #fff;
+  }
+}
