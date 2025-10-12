@@ -7,18 +7,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- SKIP-LINK: Lägga denna direkt efter <body> så att tangentbordsanvändare kan hoppa till huvudinnehållet -->
+  <!-- SKIP-LINK: Lägga denna direkt efter <body> så att tangentbordsanvändare kan hoppa till huvudinnehållet -->
   <!-- Klipp och klistra in: <a class="skip-link" href="#content">Hoppa till huvudinnehåll</a> -->
   <a class="skip-link" href="#content">Hoppa till huvudinnehåll</a>
+
   <header>
-    <!-- HEADER: semantiskt block som innehåller titel, kontakt och global navigation -->
     <h1>Yonis Yusuf</h1>
-    <p>Södra Jordbrovägen 141 • 0722560919 • <a href="mailto:yonis.yusuf1@outlook.com">yonis.yusuf1@outlook.com</a></p>
-    <!-- NAV: global meny. Lägg till aria-current="page" på aktuell sida för skärmläsare -->
-    <nav>
-      <a href="index.html" aria-current="page">CV</a>
-      <a href="letter.html">Personligt brev</a>
-      <a href="kontakt.html">Kontakt</a>
+    <!-- Kontaktinfo flyttad till kontakt.html för en renare header -->
+
+    <!-- ===== Minimal, tillgänglig hamburgermeny (checkbox-hack) ===== -->
+    <!-- INPUT: checkbox som styr om menyn är öppen. Behåll tabbning (göm visuellt, inte display:none). -->
+    <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Öppna eller stäng meny">
+    <!-- LABEL: agerar knapp för checkboxen. for kopplar till checkboxens id så klick/Enter/Space togglar. -->
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Öppna meny">
+      <!-- Dekorativt element som ritas som tre streck via CSS-pseudoelement eller här som en span -->
+      <span class="hamburger" aria-hidden="true"></span>
+    </label>
+
+    <!-- NAV: semantisk navigering. Använd lista för korrekt struktur och aria-current för aktiv länk -->
+    <nav class="main-nav" role="navigation" aria-label="Huvudmeny">
+      <ul class="main-nav__list">
+        <li><a href="index.html" aria-current="page">CV</a></li>
+        <li><a href="letter.html">Personligt brev</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
     </nav>
   </header>
   <!-- MAIN: huvudinnehållet. Ge det ett id för skip-link: id="content" -->
@@ -54,27 +66,6 @@
       <h2>Språk</h2>
       <p>Svenska (flytande) • Engelska (bra) • Somaliska (modersmål)</p>
     </section>
-
-    <!-- EXEMPEL: Accordion (kommenterat) - använd <details> för att lägga till en klickbar sektion -->
-    <!--
-    <details class="accordion">
-      <summary>Frontend skills</summary>
-      <div class="accordion__content">
-        <p>HTML, CSS, responsiv layout, tillgänglighet</p>
-      </div>
-    </details>
-    -->
-
-    <!-- EXEMPEL: Modal (kommenterat) - :target-mönster för att öppna modal utan JS -->
-    <!--
-    <a href="#modal-cv" class="open-modal">Öppna CV-förhandsvisning</a>
-    <div id="modal-cv" class="modal" role="dialog" aria-modal="true">
-      <div class="modal-inner">
-        <a href="#" class="modal-close">Stäng</a>
-        <p>Innehåll här</p>
-      </div>
-    </div>
-    -->
 
   </main>
   <!-- FOOTER: sidfot -->
