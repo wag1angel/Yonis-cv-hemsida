@@ -7,13 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- SKIP-LINK: Lägga denna direkt efter <body> så att tangentbordsanvändare kan hoppa till huvudinnehållet -->
-  <!-- Klipp och klistra in: <a class="skip-link" href="#content">Hoppa till huvudinnehåll</a> -->
+  <!-- SKIP-LINK-->
   <a class="skip-link" href="#content">Hoppa till huvudinnehåll</a>
 
   <header>
     <h1>Yonis Yusuf</h1>
-    <!-- Kontaktinfo flyttad till kontakt.html för en renare header -->
 
     <!-- ===== Minimal, tillgänglig hamburgermeny (checkbox-hack) ===== -->
     <!-- INPUT: checkbox som styr om menyn är öppen. Behåll tabbning (göm visuellt, inte display:none). -->
@@ -41,18 +39,87 @@
       <p>Under utbildning till fullstackutvecklare med fokus på programmering och webbutveckling. Engagerad, kommunikativ och problemlösningsorienterad, med erfarenhet av teamarbete och teknisk support. Passionerad kring IT och digitala lösningar, och ständigt nyfiken på att utvecklas och bidra med nya idéer.</p>
     </section>
 
-    <!-- SECTION: Arbetslivserfarenhet. Listor är bra för läsbarhet och semantik -->
-    <section>
+    <!-- SECTION: Arbetslivserfarenhet. -->
+   <section class="experience-list">
       <h2>Arbetslivserfarenhet</h2>
-      <ul>
-        <li><strong>Fryshuset-Trygghetsvärd</strong> – Skapade trygg miljö för ungdomar, förebyggde konflikter, samarbetade med skolor och föreningar. (2024–2025)</li>
-        <li><strong>Praktik Fryshuset IT-avdelning</strong> – Hjälpte elever med tekniska problem (2022–2023)</li>
-        <li><strong>Matrix, Jordbro</strong> – Kassapersonal & lagerarbetare (2022)</li>
-        <li><strong>IRepairofSweden</strong> – Hantering av trasiga mobiler (2021–2022)</li>
-        <li><strong>Myrorna</strong> – Sortering & packning av kläder (2019)</li>
-        <li><strong>Rollers and Bowlers</strong> – Kassaarbete & servering (2018)</li>
-        <li><strong>Jordbro Direkten</strong> – Kassaarbete (2017)</li>
-      </ul>
+
+      <details class="job-accordion">
+        <summary>
+          <strong>Fryshuset - Trygghetsvärd</strong> 
+          <span class="job-date">(apr 2024 – nov 2024)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Skapade en trygg miljö för ungdomar som trygghetsvärd på Fryshuset.</li>
+            <li>Var en närvarande vuxen och förebyggde konflikter.</li>
+            <li>Byggde relationer och samarbetade med skolor, fritidsgårdar och lokala föreningar för att ge ungdomarna stöd.</li>
+        </ul>
+      </details>
+      
+      <details class="job-accordion">
+        <summary>
+          <strong>Fryshuset IT avdelning (Praktik)</strong> 
+          <span class="job-date">(aug 2022 – jun 2023)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Hantering av skolkonton och teknikrelaterade problem för elever.</li>
+            <li>Support inom system som Schoolsoft och Google Drive.</li>
+        </ul>
+      </details>
+
+      <details class="job-accordion">
+        <summary>
+          <strong>Matrix</strong> 
+          <span class="job-date">(jun 2022 – aug 2022)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Hanterade kassaarbete, betalningar och returer, samt säkerställde korrekt kassaredovisning.</li>
+            <li>Assisterade kunder med produktfrågor och bidrog till en positiv kundupplevelse.</li>
+        </ul>
+      </details>
+      
+      <details class="job-accordion">
+        <summary>
+          <strong>IRepairofSweden</strong> 
+          <span class="job-date">(aug 2021 – jun 2022)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Mottog och dokumenterade trasiga mobiler.</li>
+            <li>Identifierade skador och skickade vidare till reparationsavdelningen.</li>
+        </ul>
+      </details>
+      
+      <details class="job-accordion">
+        <summary>
+          <strong>Myrorna</strong> 
+          <span class="job-date">(apr 2019 – maj 2019)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Sorterade och packade kläder för försäljning och distribution.</li>
+            <li>Bidrog till att hålla arbetsytor organiserade och effektiva.</li>
+        </ul>
+      </details>
+      
+      <details class="job-accordion">
+        <summary>
+          <strong>Rollers and Bowlers</strong> 
+          <span class="job-date">(apr 2018 – maj 2018)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Ansvarade för kassatjänst och servering av mat till kunder.</li>
+            <li>Upprätthöll en trevlig atmosfär och gav god service i en snabbmatsmiljö.</li>
+        </ul>
+      </details>
+      
+      <details class="job-accordion">
+        <summary>
+          <strong>Jordbro Direkten</strong> 
+          <span class="job-date">(apr 2017 – maj 2017)</span>
+        </summary>
+        <ul class="job-details-list">
+            <li>Hanterade kassaarbete och hjälpte kunder med betalningar.</li>
+            <li>Assisterade med diverse arbetsuppgifter för att säkerställa en smidig butikdrift.</li>
+        </ul>
+      </details>
     </section>
 
     <!-- SECTION: Utbildning -->
